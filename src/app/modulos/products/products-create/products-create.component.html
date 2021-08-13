@@ -1,0 +1,33 @@
+<div class="title-componente">Products</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Dashbord</li>
+    <li class="breadcrumb-item"><a [routerLink]="[ '/dashbord/product' ]">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+<div class="divider"></div>
+
+<div class="ct-form">
+  <form [formGroup]="productForm" (ngSubmit)="cadastrarProducts()">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <label class="form-label">Informar name</label>
+            <input formControlName="name" type="text" class="form-control" placeholder="Informar name" />
+        </div>
+        <div class="col">
+            <label class="form-label">Informar price</label>
+            <input currencyMask formControlName="price" class="form-control" placeholder="Informar price" />
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row ct-action-form">
+        <div class="col">
+            <a class="btn btn-danger" [routerLink]="[ '/dashbord/product' ]"><i class="fa fa-arrow-circle-left ico"></i>Cancelar</a>
+            <button type="submit" class="btn btn-success"><i class="fa fa-save ico"></i>Salvar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

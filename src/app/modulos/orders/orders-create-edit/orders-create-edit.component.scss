@@ -1,0 +1,54 @@
+.ct-action-add {
+    text-align : right;
+    padding-top: 32px;
+    position   : relative;
+}
+
+.ct-list-product {
+    padding: 5px 0px;
+
+}
+
+.modal-list {
+    position  : absolute;
+    top       : 0;
+    bottom    : 0;
+    left      : 0;
+    right     : 0;
+    background: #0000007b;
+    z-index   : 99;
+}
+
+div.row.box-product {
+    >div.col-1 {
+        >input {
+            cursor: pointer;
+        }
+
+        input[type="checkbox"i] {
+            width   : 17px;
+            height  : 17px;
+            top     : 3px;
+            position: relative;
+        }
+
+        >button {
+            cursor       : pointer;
+            width        : 25px;
+            height       : 25px;
+            border-radius: 50px;
+            border       : 0;
+        }
+    }
+
+    >div.col-8 {
+        font-size  : .85em;
+        color      : rgb(118, 118, 118);
+        font-weight: 400;
+    }
+
+    >div.col-3 {
+        font-weight: 600;
+        color      : #4ba02d;
+    }
+}

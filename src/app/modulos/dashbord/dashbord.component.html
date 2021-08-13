@@ -1,0 +1,13 @@
+
+<div class="dashbord">
+  <div>
+    <div class="title-dash">Dashbord</div>
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action tl active" (click)="selectedLink($event, 'product')">Products</button>
+      <button type="button" class="list-group-item list-group-item-action tl" (click)="selectedLink($event, 'order')">Orders</button>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

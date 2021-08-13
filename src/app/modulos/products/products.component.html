@@ -1,0 +1,46 @@
+<div class="title-componente">Products</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Dashbord</li>
+    <li class="breadcrumb-item active" aria-current="page">Products</li>
+  </ol>
+</nav>
+<div class="divider"></div>
+
+<div class="ct-table">
+    <div class="container ct-action">
+      <div class="row">
+        <div class="col-8">
+
+          <form class="form-seacher">
+            <input class="form-control input-seacher" placeholder="Pesquisar..."   (keyup)="pesquisar($event.target)"/>
+            <button type="button" class="btn btn-primary" (click)="listarProducts()"><i class="fa fa-refresh"></i></button>
+          </form>
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn btn-primary" (click)="directNovoProduct()"><i class="fa fa-plus-circle ico"></i>Novo</button>
+        </div>
+      </div>
+    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col text-aling-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listProduts;let i = index;">
+        <th scope="row">{{item.id}}</th>
+        <th>{{item.name}}</th>
+        <th>R$ {{util.ajustarValor(item.price)}}</th>
+        <th col="text-aling-center">
+          <button type="button" class="btn-info" (click)="directEditarProduct(item.id)"><i class="fa fa-edit ico"></i>Editar</button>
+          <button type="button" class="btn-danger" (click)="excluirProducts(item.id)"><i class="fa fa-trash ico"></i>Excluir</button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

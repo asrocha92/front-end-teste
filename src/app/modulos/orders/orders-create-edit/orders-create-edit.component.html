@@ -1,0 +1,102 @@
+<div class="title-componente">Orders</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Dashbord</li>
+    <li class="breadcrumb-item"><a [routerLink]="[ '/dashbord/order' ]">Orders</a></li>
+    <li class="breadcrumb-item active" aria-current="page" *ngIf="!isEdit">Create</li>
+    <li class="breadcrumb-item active" aria-current="page" *ngIf="isEdit">Edit</li>
+  </ol>
+</nav>
+<div class="divider"></div>
+
+<div class="ct-form">
+  <form [formGroup]="orderForm">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <label class="form-label">Total Price</label>
+          <input currencyMask formControlName="priceTotal" class="form-control" placeholder="Total Price"
+            [attr.disabled]="true" />
+        </div>
+        <div class="col">
+          <div class="ct-action-add">
+            <button type="button" class="btn btn-primary" (click)="showModelListProduct()"><i class="fa fa-plus ico"></i>ADD Produto</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="ct-list-product">
+            <label class="form-label">Products</label>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of formControlProducts.value;let i = index">
+                  <div class="row box-product">
+                    <div class="col-1">
+                      <button class="btn-danger" (click)="removeProductList(i)"><i class="fa fa-minus ico"></i></button>
+                    </div>
+                    <div class="col-8">
+                      {{item.name}}
+                    </div>
+                    <div class="col-3">
+                      R$ {{this.util.ajustarValor(item.price)}}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row ct-action-form">
+        <div class="col">
+          <a class="btn btn-danger" [routerLink]="[ '/dashbord/order' ]"><i
+              class="fa fa-arrow-circle-left ico"></i>Cancelar</a>
+          <button type="button" class="btn btn-success" *ngIf="!isEdit" (click)="cadastrarOrders()"><i class="fa fa-save ico"></i>Salvar</button>
+          <button type="button" class="btn btn-success" *ngIf="isEdit" (click)="editarOrders()"><i class="fa fa-save ico"></i>Alterar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- Modal -->
+<div id="model-list-product" class="modal-list" *ngIf="isModelSelectedProduct">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Lista produtos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="hideModelListProduct()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <input class="form-control input-seacher" placeholder="Pesquisar..." (keyup)="pesquisarProduct($event.target)"/>
+        </div>
+
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of listProduts">
+              <div class="row box-product">
+                <div class="col-1">
+                  <input type="checkbox" (change)="addListProductSelected(item, $event)"/>
+                </div>
+                <div class="col-8">
+                  {{item.name}}
+                </div>
+                <div class="col-3">
+                  R$ {{this.util.ajustarValor(item.price)}}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-danger" (click)="hideModelListProduct()"><i class="fa fa-arrow-circle-left ico"></i>Cancelar</a>
+        <button type="button" class="btn btn-primary" (click)="selectedProductList()">Selecionar</button>
+      </div>
+    </div>
+  </div>
+</div>

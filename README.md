@@ -1,27 +1,57 @@
-# FrontEnd
+## Descrição
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Projeto front-end, teste marketeasy. Utilizando framework Angular
 
-## Development server
+## Necessário conter node e angular instalado na máquina para executar projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Node
+https://nodejs.org/pt-br/download/package-manager/
 
-## Code scaffolding
+Angular
+https://angular.io/cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Executar projeto
 
-## Build
+Baixar o projeto em um diretório de sua preferência, acessar a pasta via prompt de comando e executar os comandos abaixo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+#instalar dependência
+$ npm install
 
-## Running unit tests
+#executar projeto
+$ npm start
+or
+$ ng s -o 
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Dependências do projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+#bootstrap
+npm install --save bootstrap 
 
-## Further help
+# Manipular requisições
+$ npm install --save axios
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# jquery
+$ npm install --save jquery
+$ npm install @types/jquery --save-dev
+
+# Para configurar máscara de dinheiro
+$ npm install --save ngx-currency
+
+# Notificação de mensagens em tela
+$ npm install --save sweetalert2 @sweetalert2/ngx-sweetalert2
+
+# Icones free
+$ npm install --save font-awesome 
+
+# Para configurar máscara de dinheiro
+$ npm install --save ngx-currency
+```
+
+
+## Author
+
+- Alex Santos
