@@ -11,7 +11,7 @@ import {
 } from './modulos'
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashbord' },
+  { path: '', pathMatch: 'full', redirectTo: 'dashbord/product' },
   {
     path: 'dashbord', component: DashbordComponent,
     children: [

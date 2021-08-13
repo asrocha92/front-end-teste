@@ -24,6 +24,10 @@ or
 $ ng s -o 
 ```
 
+## Front-end
+
+Acesso a api
+http://localhost:4200/
 
 ## Dependências do projeto
 
